@@ -13,8 +13,8 @@ reps = 0
 checkmark = ""
 timer = None
 
-# ---------------------------- TIMER RESET ------------------------------- #
 
+# ---------------------------- TIMER RESET ------------------------------- #
 def reset_timer():
     window.after_cancel(timer)
     timer_label.config(text="Timer")
@@ -22,11 +22,11 @@ def reset_timer():
     global checkmark
     checkmark = ""
     checkmark_label.config(text=checkmark)
-    global  reps
+    global reps
     reps = 0
 
-# ---------------------------- TIMER MECHANISM ------------------------------- #
 
+# ---------------------------- TIMER MECHANISM ------------------------------- #
 def start_counter():
     global reps
     reps += 1
@@ -44,8 +44,8 @@ def start_counter():
         timer_label.config(text="Work", fg=GREEN)
         count_down(work_sec)
 
-# ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 
+# ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 def count_down(count):
     count_min = math.floor(count / 60)
     count_sec = count % 60
@@ -61,6 +61,7 @@ def count_down(count):
         if reps % 2 == 0:
             checkmark += "✔"
             checkmark_label.config(text=checkmark)
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
